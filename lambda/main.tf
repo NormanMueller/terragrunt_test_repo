@@ -11,7 +11,7 @@ data "archive_file" "zip" {
 }
 
 resource "aws_iam_role" "iam_for_lambda" {
-  name = "iam_for_lambda2"
+  name = "iam_for_lambda3"
 
   assume_role_policy = <<EOF
 {
@@ -32,7 +32,7 @@ EOF
 
 
 resource "aws_lambda_function" "lambda" {
-  function_name = "hello_lambda2"
+  function_name = "hello_lambda3"
 
   filename         = "${data.archive_file.zip.output_path}"
   source_code_hash = "${data.archive_file.zip.output_base64sha256}"
