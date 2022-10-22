@@ -11,7 +11,7 @@ data "archive_file" "zip" {
 }
 
 resource "aws_iam_role" "iam_for_lambda" {
-  name = "iam_for_lambda"
+  name = "iam_for_lambda2"
 
   assume_role_policy = <<EOF
 {
