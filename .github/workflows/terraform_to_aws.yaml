@@ -15,7 +15,7 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Setup Terragrunt
-      - uses: eLco/setup-terragrunt@v1
+      uses: eLco/setup-terragrunt@v1
     
     - name: Verify Terraform version
       run: terraform --version
