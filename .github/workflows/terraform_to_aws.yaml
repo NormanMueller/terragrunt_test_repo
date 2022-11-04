@@ -14,6 +14,9 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
 
+    - name: Setup Terragrunt
+      - uses: eLco/setup-terragrunt@v1
+    
     - name: Verify Terraform version
       run: terraform --version
 
@@ -23,7 +26,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: terraform init 
 
-    - name: Terraform validation
+    - name: Terraform validation 
       run: terraform validate
 
 
