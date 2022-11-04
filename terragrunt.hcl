@@ -4,7 +4,7 @@ generate "backend" {
   contents = <<EOF
 terraform {
   backend "s3" {
-    bucket         = "my-terraform-state-nm"
+    bucket         = "terraform-up-and-running-state-nm-0411"
     key            = "${path_relative_to_include()}/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
@@ -12,4 +12,19 @@ terraform {
   }
 }
 EOF
+}
+
+remote_state {
+  backend = "s3"
+  generate = {
+    path      = "backend.tf"
+    if_exists = "overwrite"
+  }
+  config = {
+    bucket         = "terraform-up-and-running-state-nm-0411"
+    key            = "${path_relative_to_include()}/terraform.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+    dynamodb_table = "terraform-up-and-running-locks"
+  }
 }
