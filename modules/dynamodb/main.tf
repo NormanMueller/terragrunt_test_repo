@@ -16,9 +16,5 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
     type = "S"
   }
 
-   attribute {
-    name = var.range_key
-    type = "S"
-  }
 
 }
