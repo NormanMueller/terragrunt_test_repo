@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     bucket  = "terraform-up-and-running-state-nm-0411"
     encrypt = true
-    key     = "./terraform.tfstate"
+    key     = "s3copy/terraform.tfstate"
     region  = "us-east-1"
   }
 }
